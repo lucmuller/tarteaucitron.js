@@ -2295,7 +2295,7 @@ tarteaucitron.services.googletagmanager = {
             'gtm.start': new Date().getTime(),
             event: 'gtm.js'
         });
-        tarteaucitron.addScript('https://www.googletagmanager.com/gtm.js?id=' + tarteaucitron.user.googletagmanagerId);
+        tarteaucitron.addScript('https://www.googletagmanager.com/gtm.js?id=' + tarteaucitron.user.googletagmanagerId, undefined, undefined, undefined, undefined, undefined, undefined, true);
     }
 };
 
@@ -2319,7 +2319,7 @@ tarteaucitron.services.multiplegoogletagmanager = {
         });
 
         tarteaucitron.user.multiplegoogletagmanagerId.forEach(function (id) {
-            tarteaucitron.addScript('https://www.googletagmanager.com/gtm.js?id=' + id);
+            tarteaucitron.addScript('https://www.googletagmanager.com/gtm.js?id=' + id, undefined, undefined, undefined, undefined, undefined, undefined, true);
         });
 
     }

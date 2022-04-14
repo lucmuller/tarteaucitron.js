@@ -1880,7 +1880,7 @@ var tarteaucitron = {
             return 'en_US';
         }
     },
-    "addScript": function (url, id, callback, execute, attrName, attrVal, internal) {
+    "addScript": function (url, id, callback, execute, attrName, attrVal, internal, forceloading) {
         "use strict";
         var script,
             done = false;
@@ -1912,9 +1912,8 @@ var tarteaucitron = {
                     callback();
                 }
             }
-
-            if ( !tarteaucitron.parameters.useExternalJs || !internal ) {
-                if(internal || tarteaucitron.parameters.doNotLoadExternalScriptFromServices === false){
+            if ( !tarteaucitron.parameters.useExternalJs || !internal) {
+                if(internal || tarteaucitron.parameters.doNotLoadExternalScriptFromServices === false || forceloading){
                     document.getElementsByTagName('head')[0].appendChild(script);
                 }
             }
